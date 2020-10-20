@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController
+
 {
     @IBOutlet weak var mySegmentedController: UISegmentedControl!
     
@@ -60,22 +61,53 @@ class ViewController: UIViewController
         bottomLabel.isHidden = true
     }
     
+    var desiredNum: Double = 0.0
+    var testGrade: Double = 0.0
+    
+    func changeTextForSpecialTestGrades()
+    {
+        print ("The function is working")
+        if testGrade <= 0
+        {
+            finalGradeLabel.text = "Wow!  You don't even need to take the final exam in order to achieve your desired ending grade of \(desiredNum)% in the class.  (But you should still probably go take it 🙃)."
+        }
+        
+        else if testGrade > 100
+        {
+            finalGradeLabel.text = "Eek!  You will need to recieve a score of \(testGrade)% on the final exam in order to achieve your desired ending grade of \(desiredNum)% in the class.  You might want to ask your teacher for some extra credit opportunities."
+        }
+    }
+    
+    func changeColorsForTestGrades()
+    {
+        if testGrade <= 100
+        {
+            view.backgroundColor = UIColor.init(red: 153/255, green: 232/255, blue: 183/255, alpha: 1)
+        }
+        
+        else if testGrade >= 100
+        {
+            view.backgroundColor = UIColor.init(red: 242/255, green: 124/255, blue: 124/255, alpha: 1)
+        } 
+    }
+    
+    //yellow --> 255, 252, 168
+    
 
         @IBAction func finalGradeGestureTapped(_ sender: UITapGestureRecognizer)
     {
-        print("This is working")
         let q1Text = leftTextField.text ?? "0"
         let q1Num = Double(q1Text) ?? 0
 
         let q2Text = leftTextField.text ?? "0"
         let q2Num = Double(q2Text) ?? 0
-        
+            
         if mySegmentedController.selectedSegmentIndex == 0
         {
             let desiredGrade = middleTextField.text ?? "0"
-            let desiredNum = Double(desiredGrade) ?? 0
+            desiredNum = Double(desiredGrade) ?? 0
             
-            let testGrade = (desiredNum-(0.4*q1Num)-(0.4*q2Num))/0.2
+            testGrade = (desiredNum-(0.4*q1Num)-(0.4*q2Num))/0.2
             
             finalGradeLabel.text = "You will need to recieve a score of \(testGrade)% on the final in order to reach your desired grade of \(desiredGrade) for the end of the class."
                         
@@ -87,12 +119,14 @@ class ViewController: UIViewController
             let midtermNum = Double(midtermGrade) ?? 0
             
             let desiredGrade = bottomTextField.text ?? "0"
-            let desiredNum = Double(desiredGrade) ?? 0
+            desiredNum = Double(desiredGrade) ?? 0
             
-            let testGrade = (desiredNum-(0.4*q1Num)-(0.4*q2Num)-(0.1*midtermNum))/0.1
+            testGrade = (desiredNum-(0.4*q1Num)-(0.4*q2Num)-(0.1*midtermNum))/0.1
             
-            finalGradeLabel.text = "You will need to recieve a score of \(testGrade)% on the final in order to reach your desired grade of \(desiredGrade) for the end of the class."
+            finalGradeLabel.text = "You will need to recieve a score of \(testGrade)% on the final exam in order to achieve your desired ending grade of \(desiredGrade)% in the class."
         }
+        changeTextForSpecialTestGrades()
+        changeColorsForTestGrades()
     }
     
     
@@ -116,5 +150,4 @@ class ViewController: UIViewController
         default: break
         }
     }
-    
 }
