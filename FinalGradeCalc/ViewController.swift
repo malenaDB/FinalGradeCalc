@@ -66,7 +66,6 @@ class ViewController: UIViewController
     
     func changeTextForSpecialTestGrades()
     {
-        print ("The function is working")
         if testGrade <= 0
         {
             finalGradeLabel.text = "Wow!  You don't even need to take the final exam in order to achieve your desired ending grade of \(desiredNum)% in the class.  (But you should still probably go take it 🙃)."
@@ -80,20 +79,31 @@ class ViewController: UIViewController
     
     func changeColorsForTestGrades()
     {
-        if testGrade <= 100
+        if testGrade <= 0
         {
+            // this is the code for the BLUE color
+            view.backgroundColor = UIColor.init(red: 171/255, green: 226/255, blue: 255/255, alpha: 1)
+        }
+        else if testGrade < 80 && testGrade > 0
+        {
+            // this is the code for the GREEN color
             view.backgroundColor = UIColor.init(red: 153/255, green: 232/255, blue: 183/255, alpha: 1)
         }
         
-        else if testGrade >= 100
+        else if testGrade >= 80 && testGrade <= 100
         {
+            // this is the code for the YELLOW color
+            view.backgroundColor = UIColor.init(red: 255/255, green: 242/255, blue: 171/255, alpha: 1)
+        }
+        
+        else if testGrade > 100
+        {
+            // this is the code for the RED color
             view.backgroundColor = UIColor.init(red: 242/255, green: 124/255, blue: 124/255, alpha: 1)
-        } 
+        }
     }
-    
-    //yellow --> 255, 252, 168
-    
 
+    
         @IBAction func finalGradeGestureTapped(_ sender: UITapGestureRecognizer)
     {
         let q1Text = leftTextField.text ?? "0"
@@ -143,11 +153,25 @@ class ViewController: UIViewController
         case 1:
             showBottomTextField()
             showBottomLabel()
+            
+            middleTextField.text = ""
                        
             middleLabel.text = "Midterm Grade:"
             bottomLabel.text = "Desired Grade:"
         
         default: break
         }
+    }
+    
+   //  Below is a shake gesture so that everything will reset when the phone is shaken.
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
+    {
+        view.backgroundColor = UIColor.white
+        
+        leftTextField.text = ""
+        rightTextField.text = ""
+        middleTextField.text = ""
+        bottomTextField.text = ""
+        finalGradeLabel.text = "Find What I Need To Get On The Final Exam"
     }
 }

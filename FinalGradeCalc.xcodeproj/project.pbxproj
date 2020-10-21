@@ -15,6 +15,8 @@
 		F21EA687253DC14B00CF099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21EA685253DC14B00CF099C /* LaunchScreen.storyboard */; };
 		F2795C1C253F4C3B00063B87 /* DirectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2795C1B253F4C3B00063B87 /* DirectionsVC.swift */; };
 		F2795C1E253F9A2900063B87 /* LetterGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2795C1D253F9A2900063B87 /* LetterGradeViewController.swift */; };
+		F2DC79B62540E758008ABA7C /* ConverScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC79B52540E758008ABA7C /* ConverScoresVC.swift */; };
+		F2DC79B82540F003008ABA7C /* DifferentColorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DC79B72540F003008ABA7C /* DifferentColorsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		F21EA688253DC14B00CF099C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2795C1B253F4C3B00063B87 /* DirectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsVC.swift; sourceTree = "<group>"; };
 		F2795C1D253F9A2900063B87 /* LetterGradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGradeViewController.swift; sourceTree = "<group>"; };
+		F2DC79B52540E758008ABA7C /* ConverScoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverScoresVC.swift; sourceTree = "<group>"; };
+		F2DC79B72540F003008ABA7C /* DifferentColorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentColorsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				F21EA67C253DC14A00CF099C /* SceneDelegate.swift */,
 				F21EA67E253DC14A00CF099C /* ViewController.swift */,
 				F21EA680253DC14A00CF099C /* Main.storyboard */,
+				F2DC79B72540F003008ABA7C /* DifferentColorsVC.swift */,
+				F2DC79B52540E758008ABA7C /* ConverScoresVC.swift */,
 				F2795C1D253F9A2900063B87 /* LetterGradeViewController.swift */,
 				F2795C1B253F4C3B00063B87 /* DirectionsVC.swift */,
 				F21EA683253DC14B00CF099C /* Assets.xcassets */,
@@ -144,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DC79B62540E758008ABA7C /* ConverScoresVC.swift in Sources */,
 				F21EA67F253DC14A00CF099C /* ViewController.swift in Sources */,
+				F2DC79B82540F003008ABA7C /* DifferentColorsVC.swift in Sources */,
 				F2795C1E253F9A2900063B87 /* LetterGradeViewController.swift in Sources */,
 				F21EA67B253DC14A00CF099C /* AppDelegate.swift in Sources */,
 				F2795C1C253F4C3B00063B87 /* DirectionsVC.swift in Sources */,
